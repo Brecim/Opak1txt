@@ -45,4 +45,10 @@ public class Zakaznik {
     public void setPocetProdeju(int pocetProdeju) {
         this.pocetProdeju = pocetProdeju;
     }
+
+    public void zvysPocetProdeju(int pocetProdeju) throws PocetZaporny {
+        if (pocetProdeju >= 0) {
+            this.pocetProdeju += pocetProdeju;
+        } else throw new PocetZaporny("Pocet prodeju nesmí být menší než 0.");
+    }
 }
