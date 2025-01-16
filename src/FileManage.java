@@ -39,6 +39,9 @@ public class FileManage {
         } catch (FileNotFoundException e) {
             System.err.println(e + ": " + "Soubor nebyl nalezen.");
             System.exit(404);
+        } catch (IOException e) {
+            System.err.println(e + ": " + "Chyba při čtení souboru.");
+            System.exit(100);
         }
 
     }

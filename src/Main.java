@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +16,19 @@ public class Main {
      fm.fileOut();
      fm.fileIn();
 
+     ArrayList<Zakaznik> records = ev.selRecordsLimit(25);
+     System.out.println("Zákazníci nad " + ev.limit + " prodejů:");
+     for (Zakaznik zakaznik : records) {
+         System.out.println(zakaznik.getJmeno() + ": " + zakaznik.getPocetProdeju());
+            }
 
 
+     double avgSalesUH = ev.uhAvg();
+     System.out.println("Průměrný počet prodejů v Uherském Hradišti je: " + avgSalesUH);
     }
+
+
+
+
+
 }
