@@ -33,7 +33,12 @@ public class FileManage {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 String[] data = line.split(":");
-                System.out.println(data[0] + ":" + data[1] + ":" + data[2] + ":" + data[3]);
+                String jmeno = data[0].trim();
+                LocalDate narozeni = LocalDate.parse(data[1].trim());
+                String mesto = data[2].trim();
+                int pocetProdeju = Integer.parseInt(data[3].trim());
+                Zakaznik zakaznik = new Zakaznik(jmeno, narozeni, mesto, pocetProdeju);
+                ev.addZak(zakaznik);
 
             }
         } catch (FileNotFoundException e) {
