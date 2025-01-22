@@ -44,11 +44,13 @@ public class FileManage {
         } catch (FileNotFoundException e) {
             System.err.println(e + ": " + "Soubor nebyl nalezen.");
             System.exit(404);
-        } catch (IOException e) {
-            System.err.println(e + ": " + "Chyba při čtení souboru.");
+        } catch (NumberFormatException e) {
+            System.err.println(e + ": " + "Nesprávné číselné hodnoty.");
             System.exit(100);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e + ": " + "Chybný format dat.");
+            System.exit(101);
         }
-
     }
 }
 
